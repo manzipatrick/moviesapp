@@ -1,0 +1,199 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>jorah</title>
+    <link rel="stylesheet" href="customstyle.css">
+    <link rel="stylesheet" href="normalize.css">
+    <style>
+      header{
+ 
+  padding: 20px;
+  width: 100%;
+  margin-bottom:30px;
+  background-color:darkgrey;
+}
+header h1{
+  color:#FF8D1B;
+  margin-top:0;
+  margin-left: 60px;
+  float: left;
+  width: 25%;
+}
+h1 a{
+  color: #FF8D1B;
+  text-decoration: none;
+}
+
+h1 a:hover{
+  color: black;
+  transition: background-color 2s ease 0s;
+}
+.part3 a{
+  color: black;
+  text-decoration: none;
+}
+
+.part3 a:hover{
+  color:#FF8D1B;
+  text-decoration: none;
+  transition: background-color 2s ease 0s;
+}
+
+nav{
+  
+  font-family: sans-serif;
+}
+
+nav li{
+  display: inline-block;
+  margin-right: 15px;
+  padding: 3px;
+  float: right;
+  margin: 0 20px;
+}
+
+nav li a{
+  text-decoration: none;
+  color: black;
+  transition: background-color 2s ease 0s;
+ display: block;
+ text-align: center;
+ border-radius: 20px;
+ font-size: 18px;
+  
+}
+
+nav li a:hover{
+  background-color: #FF8D1B;
+ 
+}
+ ul li ul{
+  background: #FF8D1B;
+}
+ ul li ul li{
+  float: none;
+}
+ ul li ul{
+  display: none;
+}
+ ul li:hover ul{
+  display: block;
+}
+
+
+.sliderpart{
+
+  margin: 100px 400px;
+  margin-top: -90px;
+ width: 500px;
+ height: 150px;
+  padding: 50px;
+  background:white;
+  text-align: center;
+  border-radius: 30px;
+
+}
+
+.intropart{
+
+  width: 50%;
+  margin-left:80px;
+
+}
+
+.topmaindiv{
+  background-image: url(images/5.jpg);
+width: 100%;
+  
+}
+
+
+@media
+
+
+
+    </style>
+  </head>
+  <body>
+    <div class="topmaindiv">
+    <header>
+      <h1><a href="#">Jorah Entertainment</a></h1>
+      <nav>
+          <ul>
+              <li><a href="#portal.html">Portal</a></li>
+              <li><a href="#login.html">Log in</a></li>
+              <li><a href="#series.html">Series</a></li>
+              <li><a href="#">Category</a>
+              <ul>
+                      <li><a href="#action.html">Action</a></li>
+                      <li><a href="#adventure.html">Adventure</a></li>
+                      <li><a href="#animation1.html">Animation</a></li>
+                      <li><a href="#horror.html">Horror</a></li>
+                      <li><a href="#romance.html">Romance</a></li>
+             </ul>
+            </li>
+
+              <li><a href="about.html">About</a></li>
+              <li><a href="index.html">Home </a></li>
+
+                              
+          </ul>
+      </nav>
+  </header>
+
+  <hr>
+  &nbsp
+
+<% if !@resume.errors.empty? %>
+   <div class = "alert alert-error">
+      
+      <ul>
+         <% @resume.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+         <% end %>
+      </ul>
+      
+   </div>
+<% end %>
+
+<div class = "well">
+   <%= form_for @resume, html: { multipart: true } do |f| %>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+      <%= f.label :category %>
+      <%= f.text_field :category %>
+      <%= f.label :year %>
+      <%= f.text_field :year %>
+      <%= f.label :price %>
+      <%= f.text_field :price %>
+      <%= f.label :image %>
+      <%= f.file_field :image %>
+      <%= f.submit "Save", class: "btn btn-warning" %>
+   <% end %>
+</div>
+
+<hr>
+<hr>
+<hr>
+
+
+<div style="width:100%;align-content: center" class="footer">
+
+        <div style="background-color: darkgrey; float: left;width: 60%; " class="footerlinks">
+            <nav style="float:left;height:56px" >
+                <ul>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#portal.html">Store</a></li>
+                    <li><a href="#adventure.html">Adventure</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    
+                </ul>
+            </nav>
+        </div>     
+    </div>
+   
+    <div style="float:left;background-color: darkgrey;width:40%;height:56px;" class="copyright">
+      <p>&copy;2019 <b>Jorah Entertainment</b> All rights Reserved | Designed by Manzi</p>
+    </div>
+</div>

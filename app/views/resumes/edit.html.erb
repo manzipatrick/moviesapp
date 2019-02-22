@@ -1,0 +1,28 @@
+<% if !@resume.errors.empty? %>
+   <div class = "alert alert-error">
+      
+      <ul>
+         <% @resume.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+         <% end %>
+      </ul>
+      
+   </div>
+<% end %>
+<h1>Edit movies</h1>
+
+<div class = "well">
+   <%= form_for @resume, html: { multipart: true} do |f| %>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+      <%= f.label :category %>
+      <%= f.text_field :category %>
+      <%= f.label :year %>
+      <%= f.text_field :year %>
+      <%= f.label :price %>
+      <%= f.text_field :price %>
+      <%= f.label :image %>
+      <%= f.file_field :image %>
+      <%= f.submit "Update", class: "btn btn-primary" %>
+   <% end %>
+</div>
